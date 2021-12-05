@@ -1,0 +1,6 @@
+Flask==1.1.2
+flask-restx==0.5.1
+requests==2.24.0
+dnspython==2.1.0
+celery==5.2.1
+redis==4.0.2

@@ -1,0 +1,26 @@
+version: '2'
+services:
+  web:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    image: gorbetskiydmitriy/flask_api
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    image: gorbetskiydmitriy/mlmodels_worker
+    restart: always
+    depends_on:
+      - redis
+  redis:
+    image: redis
+
+
+
+
